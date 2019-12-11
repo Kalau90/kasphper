@@ -4,9 +4,39 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "5031f34052ce738a6aeb7ccea2d57a93",
-    "content-hash": "37c9f56c1363ea64a8a6ed2bb752fa30",
+    "hash": "a1058552dad6109d6a53436230419cdc",
+    "content-hash": "7a2ec072388812f1bba366eb13df4a91",
     "packages": [
+        {
+            "name": "sleiman/airtable-php",
+            "version": "2.3.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/sleiman/airtable-php.git",
+                "reference": "ffb41551b0da84171be3521e9a06af15509c8605"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/sleiman/airtable-php/zipball/ffb41551b0da84171be3521e9a06af15509c8605",
+                "reference": "ffb41551b0da84171be3521e9a06af15509c8605",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.4"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "TANIOS\\Airtable\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "A PHP wrapper for the Airtable API Edit",
+            "time": "2019-09-12 15:10:16"
+        },
         {
             "name": "twig/twig",
             "version": "v1.13.2",

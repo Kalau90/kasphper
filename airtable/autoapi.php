@@ -1,8 +1,10 @@
 <?php
 /* if not using composer, uncomment this*/
-include('Airtable.php');
+/*include('Airtable.php');
 include('Request.php');
-include('Response.php');
+include('Response.php');*/
+
+require 'vendor/autoload.php';
 
 use TANIOS\Airtable\Airtable;
 
