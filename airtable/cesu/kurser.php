@@ -4,7 +4,7 @@ $airtable_login = array(
     'base'      => 'appbJWdkuvOgHMbTl',
 );
 
-include("autoapi.php");
+include("../autoapi.php");
 
 // brug newJoint til at tilføje en ny tabel med krydsreferencer
 // Formen for newJoint (tabelname, colname), hvor:
