@@ -1,6 +1,5 @@
 {
-    "require" : {
-        "php" : "^7.0",
-        "ext-mbstring": "*"
+    "require": {
+        "twig/twig": "1.13.*"
     }
 }
