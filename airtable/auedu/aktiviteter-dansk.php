@@ -1,10 +1,24 @@
 <?php
 $airtable_login = array(
     'api_key'   => 'keyK9H1XTdu0nJB4j',
-    'base'      => 'appaYuZQVSoSTfJfN',
+    'base'      => 'appuTkKn1beBN5hrv',
 );
 
+function getHttpVar($key, $default){
+	if(isset($_GET[$key])){
+		return $_GET[$key];
+	}
+	return $default;
+}
+
+$lang = getHttpVar("lang", "da");
+$table = getHttpVar("table", "praksis");
+
 include("../autoapi.php");
+
+if($table == "praksis"){
+	//
+
 
 // brug newJoint til at tilføje en ny tabel med krydsreferencer
 // Formen for newJoint (tabelname, colname), hvor:
