@@ -1,5 +1,19 @@
 <?php
 
+$link = mysqli_connect("10.83.19.104", "viggodev", "kathomads", "dynamiccases", 3306);
+
+if (!$link) {
+    echo "Error: Unable to connect to MySQL." . PHP_EOL;
+    echo "Debugging errno: " . mysqli_connect_errno() . PHP_EOL;
+    echo "Debugging error: " . mysqli_connect_error() . PHP_EOL;
+    exit;
+}
+
+echo "Success: A proper connection to MySQL was made! The my_db database is great." . PHP_EOL;
+echo "Host information: " . mysqli_get_host_info($link) . PHP_EOL;
+
+mysqli_close($link);
+
 $airtable_login = array(
     'api_key'   => 'keyK9H1XTdu0nJB4j',
     'base'      => 'appuTkKn1beBN5hrv',
@@ -45,13 +59,7 @@ function newJoint($tablename, $colname, $idcol = "Name", $addcol = array()){
 			$str.= '},';
 			$name_val = $record->fields->$idcol;
 			$joints[$colname][$id] = $name_val;
-			/*$str.= '"name": "'.($name_val).'"';
-			foreach($addcol as $mycol){
-				$str.= ', "'.$mycol.'": "'.($record->fields->$mycol).'"';
-			}*/
-			//$str.= '},';
 		}
-		//$str = substr($str, 0, -2);
 
 	}
 	while( $joints_request = $joints_response->next() );
@@ -63,7 +71,6 @@ function loadTable($tablename, $keyname, $ignores = array()){
 	global $joints;
 	global $airtable;
 
-	/* PRAKSISEKSEMPLER */
 	$params = array(
 		"filterByFormula" => "AND( ".$keyname." != '')",
 		"sort" => array(array('field' => $keyname, 'direction' => 'asc'))
