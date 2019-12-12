@@ -67,7 +67,7 @@ function loadTable($tablename, $keyname, $ignores = array()){
 	do {
 		$response = $request->getResponse();
 		foreach($response[ 'records' ] as $record){
-			$str.= '{';
+			/*$str.= '{';
 			foreach($record->fields as $key => $val){
 				if(is_array($val)){
 					if(array_key_exists($key, $joints)){
@@ -85,7 +85,8 @@ function loadTable($tablename, $keyname, $ignores = array()){
 				}	
 			}
 			$str = substr($str, 0, -2);
-			$str.= '},';
+			$str.= '},';*/
+			print_r($record);
 		}
 	}
 	while( $request = $response->next() );
