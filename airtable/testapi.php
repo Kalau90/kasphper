@@ -51,7 +51,7 @@ function newJoint($tablename, $colname, $idcol = "Name", $addcol = array()){
 			}*/
 			//$str.= '},';
 		}
-		$str = substr($str, 0, -2);
+		//$str = substr($str, 0, -2);
 
 	}
 	while( $joints_request = $joints_response->next() );
