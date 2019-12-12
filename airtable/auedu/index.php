@@ -27,15 +27,15 @@ if($lang == "en"){
 }
 
 if($table == "aktivitet"){
-	newJoint('Undervisningsformer', 'Undervisningsformer', $lang_col);
-	newJoint('Fokusomraader', 'Fokusomraader', $lang_col);
+	newJoint('Undervisningsformer', 'Undervisningsformer', $lang_col, array("oversidelink"));
+	newJoint('Fokusomraader', 'Fokusomraader', $lang_col, array("oversidelink"));
 	newJoint('Fakultet', 'Fakultet', $lang_col);
 	newJoint('Fremtidige', 'Fremtidige', $lang_col);
 	newJoint('Teknologi', 'Teknologi', $lang_col);
 	loadTable('Aktivitet', $lang_col, array("Kommentarer")); // ignore = "";
 }elseif($table == "praksis"){
-	newJoint('Undervisningsformer', 'Undervisningsformer', $lang_col);
-	newJoint('Fokusomraader', 'Fokusomraader', $lang_col);
+	newJoint('Undervisningsformer', 'Undervisningsformer', $lang_col, array("oversidelink"));
+	newJoint('Fokusomraader', 'Fokusomraader', $lang_col, array("oversidelink"));
 	newJoint('Fakultet', 'Fakultet', $lang_col);
 	loadTable('Praksis', $lang_col, array("Kommentarer")); // ignore = "";
 }

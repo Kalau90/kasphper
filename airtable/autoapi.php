@@ -12,7 +12,7 @@ $airtable = new Airtable($airtable_login);
 
 $joints = [];
 
-function newJoint($tablename, $colname, $idcol = "Name"){
+function newJoint($tablename, $colname, $idcol = "Name", $addcol = array()){
 	global $airtable;
 	global $joints;
 	$joint_params = array(
@@ -30,8 +30,10 @@ function newJoint($tablename, $colname, $idcol = "Name"){
 			$id = $record->id;
 			$val = $record->fields->$idcol;
 			$joints[$colname][$id] = $val;
-			$str.= '"name": "'.($val).'", ';
-			$str.= '"oversidelink": "'.($record->fields->oversidelink).'"';
+			$str.= '"name": "'.($val).'"';
+			foreach($addcol as $mycol){
+				$str.= ', "'.$mycol.'": "'.($record->fields->$mycol).'"';
+			}
 			$str.= '},';
 		}
 		//$str = substr($str, 0, -2);
