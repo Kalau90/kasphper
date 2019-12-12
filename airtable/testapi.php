@@ -34,15 +34,24 @@ function newJoint($tablename, $colname, $idcol = "Name", $addcol = array()){
 		foreach($joints_response[ 'records' ] as $record){
 			$str.= '{';
 			$id = $record->id;
-			$val = $record->fields->$idcol;
-			$joints[$colname][$id] = $val;
-			$str.= '"name": "'.($val).'"';
+			foreach($record->fields as $key => $val){
+				if(is_array($val)){
+					// if it is an array, it is a reference
+				}elseif(!in_array($key, $ignores)){
+					$str.= '"'.preg_replace("/\s/", "", $key).'": "'.preg_replace( "/\r|\n/", "<br>", htmlspecialchars($val, ENT_QUOTES)).'", '; //  
+				}	
+			}
+			$str = substr($str, 0, -2);
+			$str.= '},';
+			$name_val = $record->fields->$idcol;
+			$joints[$colname][$id] = $name_val;
+			/*$str.= '"name": "'.($name_val).'"';
 			foreach($addcol as $mycol){
 				$str.= ', "'.$mycol.'": "'.($record->fields->$mycol).'"';
-			}
-			$str.= '},';
+			}*/
+			//$str.= '},';
 		}
-		//$str = substr($str, 0, -2);
+		$str = substr($str, 0, -2);
 
 	}
 	while( $joints_request = $joints_response->next() );
@@ -67,11 +76,10 @@ function loadTable($tablename, $keyname, $ignores = array()){
 	do {
 		$response = $request->getResponse();
 		foreach($response[ 'records' ] as $record){
-			/*$str.= '{';
+			$str.= '{';
 			foreach($record->fields as $key => $val){
 				if(is_array($val)){
 					if(array_key_exists($key, $joints)){
-				//		$str .= "JA";
 						$str .= '"'.$key.'": ';
 						$str .= "[";
 						for($v = 0; $v < sizeof($val); $v++){
@@ -85,8 +93,7 @@ function loadTable($tablename, $keyname, $ignores = array()){
 				}	
 			}
 			$str = substr($str, 0, -2);
-			$str.= '},';*/
-			print_r($record);
+			$str.= '},';
 		}
 	}
 	while( $request = $response->next() );
@@ -95,6 +102,6 @@ function loadTable($tablename, $keyname, $ignores = array()){
 	echo "]');";
 }
 
+newJoint('Undervisningsformer', 'Undervisningsformer');
 loadTable('Praksis', 'Name', array("Kommentarer")); // ignore = "";
-
 ?>
