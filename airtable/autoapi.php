@@ -30,7 +30,8 @@ function newJoint($tablename, $colname, $idcol = "Name"){
 			$id = $record->id;
 			$val = $record->fields->$idcol;
 			$joints[$colname][$id] = $val;
-			$str.= '"name": "'.($val).'"';
+			$str.= '"name": "'.($val).'", ';
+			$str.= '"oversidelink": "'.($record->fields->oversidelink).'"';
 			$str.= '},';
 		}
 		//$str = substr($str, 0, -2);
