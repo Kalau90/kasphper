@@ -1,6 +1,6 @@
 <?php
 
-$link = mysqli_connect("10.83.19.104", "viggodev", "kathomads", "dynamiccases", 3306);
+$link = mysqli_connect("10.83.19.104", "root", "kathomads", "dynamiccases", 3306);
 
 if (!$link) {
     echo "Error: Unable to connect to MySQL." . PHP_EOL;
