@@ -2,8 +2,10 @@
 //$link = mysqli_connect(, "dynamiccases", 3306);
 include("../logs.php");
 
-echo $server;
+echo "hej";
 
+echo $server;
+?>
 // Create connection
 /*$conn = new mysqli($server, $username, $password);
 
