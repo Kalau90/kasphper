@@ -1,7 +1,7 @@
 <?php
 //$link = mysqli_connect(, "dynamiccases", 3306);
 // Create connection
-$conn = new mysqli("10.83.19.104", "root", "kathomads");
+$conn = new mysqli("10.83.19.104", "viggodev", "kathomads");
 
 // Check connection
 if ($conn->connect_error) {
