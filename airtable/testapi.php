@@ -5,7 +5,7 @@ include("logs.php");
 echo $server;
 
 // Create connection
-$conn = new mysqli($server, $username, $password);
+/*$conn = new mysqli($server, $username, $password);
 
 // Check connection
 if ($conn->connect_error) {
