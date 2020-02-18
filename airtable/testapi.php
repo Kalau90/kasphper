@@ -19,7 +19,7 @@ $airtable_login = array(
 );
 
 /* if not using composer, uncomment this*/
-include('Airtable.php');
+/*include('Airtable.php');
 include('Request.php');
 include('Response.php');
 
@@ -109,5 +109,5 @@ function loadTable($tablename, $keyname, $ignores = array()){
 }
 
 newJoint('Undervisningsformer', 'Undervisningsformer');
-loadTable('Praksis', 'Name', array("Kommentarer")); // ignore = "";
+loadTable('Praksis', 'Name', array("Kommentarer")); // ignore = "";*/
 ?>
