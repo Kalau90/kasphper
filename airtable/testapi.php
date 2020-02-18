@@ -1,6 +1,6 @@
 <?php
 //$link = mysqli_connect(, "dynamiccases", 3306);
-include("logs.php");
+include("../logs.php");
 
 echo $server;
 
