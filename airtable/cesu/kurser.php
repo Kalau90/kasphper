@@ -15,6 +15,7 @@ newJoint('Maalgruppe', 'Maalgruppe');
 newJoint('Format', 'Format');
 newJoint('Vaerktojer', 'Vaerktojer');
 newJoint('Sprog', 'Sprog');
+newJoint('Sortering', 'Sortering');
 
 loadTable('Kurser', 'Name', array("Kommentarer")); // ignore = "";
 ?>
