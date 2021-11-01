@@ -1,3 +1,4 @@
+Welcome!
 <?php
 phpinfo();
 ?>
