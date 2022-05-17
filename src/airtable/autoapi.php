@@ -75,7 +75,7 @@ function loadTable($tablename, $keyname, $ignores = array()){
 						$str .= "], ";
 					}
 				}elseif(!in_array($key, $ignores)){
-					$str.= '"'.preg_replace("/\s/", "", $key).'": "'.preg_replace( "/\r|\n/", "<br>", htmlspecialchars($val, ENT_QUOTES)).'", '; //  
+					$str.= '"'.preg_replace("/\s/", "", $key).'": "'.preg_replace( "/\r|\n|\r\n/", "<br>", htmlspecialchars($val, ENT_QUOTES)).'", '; //  
 				}	
 			}
 			$str = substr($str, 0, -2);
