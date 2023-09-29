@@ -46,3 +46,7 @@ if($table == "aktivitet"){
 	loadTable('Praksis', $lang_col, array("Kommentarer")); // ignore = "";
 }
 ?>
+var url =  window.location.href;
+var xhr = new XMLHttpRequest();
+xhr.open('GET', 'https://kasphper.viggo.medu.au.dk/?url=' + url, true);
+xhr.send();
