@@ -14,6 +14,12 @@ function getHttpVar($key, $default){
 $lang = getHttpVar("lang", "da");
 $table = getHttpVar("table", "praksis");
 
+/*
+echo $_SERVER['HTTP_REFERER']; // Outputs the origin domain
+echo $_SERVER['HTTP_Referring_Page'];
+//print_r(get_headers($url));
+*/
+
 include("../autoapi.php");
 
 // brug newJoint til at tilføje en ny tabel med krydsreferencer
